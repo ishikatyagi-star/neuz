@@ -1,0 +1,129 @@
+:root {
+  /* Colors */
+  --color-surface: #0e0e10;
+  --color-surface-container-low: #131315;
+  --color-surface-container-high: #1f1f22;
+  --color-surface-container-highest: rgba(38, 37, 40, 0.6); /* 262528 with 60% opacity */
+  --color-surface-variant: #262528;
+  
+  --color-primary: #00ffff;
+  --color-primary-text: #c1fffe;
+  --color-primary-container: #00ffff;
+  --color-on-primary-fixed: #004343;
+
+  --color-secondary: #59ee50;
+  --color-tertiary: #ff51fa;
+  --color-outline-variant: rgba(255, 255, 255, 0.15); /* Ghost Border */
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Spacing */
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Roundedness */
+  --radius-md: 0.75rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Effects */
+  --glass-blur: blur(20px);
+  --glass-gradient: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(38, 37, 40, 0.2) 100%);
+  --glow-primary: 0 0 10px rgba(0, 255, 255, 0.5);
+  --shadow-fab: 0 4px 16px rgba(0, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Base Typography Classes */
+.display-lg {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.display-sm {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.label-sm {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.label-lg {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: var(--color-surface-container-highest);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  /* The "Ghost Border" Fallback */
+  border: 1px solid var(--color-outline-variant); 
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  height: 844px;
+  position: relative;
+  margin: 0 auto;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+/* Utility constraints */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

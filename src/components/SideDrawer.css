@@ -1,0 +1,66 @@
+.drawer-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(14, 14, 16, 0.4);
+  z-index: 200;
+  animation: fadeIn 0.3s ease;
+}
+
+.side-drawer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 75%;
+  max-width: 290px;
+  height: 100%;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--color-surface-container-high);
+  animation: slideInLeft 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
+  border-right: 1px solid var(--color-outline-variant);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.drawer-nav.secondary {
+  gap: var(--space-4);
+}
+
+.drawer-link {
+  cursor: pointer;
+  transition: color 0.2s;
+  color: #fff;
+}
+
+.drawer-link:active {
+  color: var(--color-primary-text);
+  transform: translateX(4px);
+}
+
+.drawer-divider {
+  height: 1px;
+  background: var(--color-outline-variant);
+  margin: var(--space-8) 0;
+}

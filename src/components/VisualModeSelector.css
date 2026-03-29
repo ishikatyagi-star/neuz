@@ -1,0 +1,26 @@
+.mode-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mode-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-item:active {
+  transform: scale(0.98);
+}
+
+.mode-item.active {
+  border-color: var(--color-primary);
+  background: rgba(0, 255, 255, 0.1);
+}

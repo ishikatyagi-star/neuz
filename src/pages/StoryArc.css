@@ -1,0 +1,185 @@
+.arc-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.arc-header {
+  position: sticky;
+  top: 0; z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface);
+}
+
+.arc-main {
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.arc-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Timeline */
+.timeline-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-left: 12px;
+}
+
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  top: 8px; bottom: 0; left: 16px;
+  width: 2px;
+  background: var(--color-surface-container-high);
+  z-index: 1;
+}
+
+.timeline-event {
+  display: flex;
+  gap: var(--space-6);
+  position: relative;
+  z-index: 2;
+  /* Add staggered pop effect */
+  animation: reveal 0.5s ease backwards;
+}
+
+.timeline-event:nth-child(1) { animation-delay: 0.1s; }
+.timeline-event:nth-child(2) { animation-delay: 0.25s; }
+.timeline-event:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes reveal {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+}
+
+.dot.primary { background: var(--color-primary); box-shadow: 0 0 10px var(--color-primary); }
+.dot.tertiary { background: var(--color-tertiary); box-shadow: 0 0 10px var(--color-tertiary); }
+.dot.secondary { background: var(--color-secondary); box-shadow: 0 0 10px var(--color-secondary); }
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Key Players */
+.key-players-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.players-scroll {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin: 0 calc(-1 * var(--space-4));
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.player-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 80px;
+}
+
+.player-ring-container {
+  width: 72px; height: 72px;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.player-ring {
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 2px;
+  animation: rotate 4s linear infinite;
+}
+
+.player-ring-container img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sentiment Chart */
+.sentiment-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sentiment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.sentiment-legend {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.leg-item { display: flex; align-items: center; gap: 4px; }
+.dot-sm { width: 6px; height: 6px; border-radius: 50%; }
+.dot-sm.secondary { background: var(--color-secondary); }
+.dot-sm.negative { background: var(--color-tertiary); } /* using tertiary for negative in original design note */
+
+.chart-mockup {
+  height: 200px;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.sentiment-insight {
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

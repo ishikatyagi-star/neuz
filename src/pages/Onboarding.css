@@ -1,0 +1,190 @@
+.onboarding-container {
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.onboarding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.logo-glow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  color: var(--color-primary-text);
+  text-shadow: var(--glow-primary);
+}
+
+.icon-btn {
+  color: var(--color-primary-text);
+  cursor: pointer;
+}
+
+.avatar-placeholder {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 8px rgba(0,255,255,0.3);
+}
+
+.onboarding-main {
+  flex: 1;
+}
+
+.muted-text {
+  color: var(--color-text-muted);
+  margin-top: calc(var(--space-4) / 2);
+  margin-bottom: var(--space-8);
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.style-card {
+  position: relative;
+  height: 140px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-outline-variant);
+  transition: all 0.3s ease;
+}
+
+.style-card:active {
+  transform: scale(0.98);
+}
+
+.style-card.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.style-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  transition: all 0.3s ease;
+}
+
+.style-card:hover .style-bg {
+  filter: brightness(0.8);
+}
+
+/* Hardcoded image backgrounds for onboarding options */
+.style-card:nth-child(1) .style-bg { background-image: url('https://images.unsplash.com/photo-1541562232579-515a213580f4?w=500&q=80'); }
+.style-card:nth-child(2) .style-bg { background-image: url('https://images.unsplash.com/photo-1578632292335-df3fbc186b4d?w=500&q=80'); }
+.style-card:nth-child(3) .style-bg { background-image: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=500&q=80'); }
+.style-card:nth-child(4) .style-bg { background-image: url('https://images.unsplash.com/photo-1552168324-d612d77725e3?w=500&q=80'); }
+
+.style-label {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  z-index: 2;
+}
+
+.check-circle {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center; justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.style-card.selected .check-circle {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.themes-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-label {
+  margin-bottom: var(--space-4);
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.theme-pill {
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-pill.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary-fixed);
+  border-color: var(--color-primary);
+}
+
+.theme-pill.highlight {
+  background: var(--color-tertiary);
+  color: #fff;
+  border-color: var(--color-tertiary);
+}
+
+.onboarding-footer {
+  margin-top: var(--space-8);
+  padding-bottom: var(--space-4); /* Safe area */
+}
+
+.primary-btn {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-fixed);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.full-width {
+  width: 100%;
+}

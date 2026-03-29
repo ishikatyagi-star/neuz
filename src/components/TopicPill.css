@@ -1,0 +1,30 @@
+.topic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.topic-pill.glow {
+  box-shadow: 0 0 12px calc(var(--pill-color));
+  border-color: var(--pill-color);
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--pill-color);
+  box-shadow: 0 0 8px var(--pill-color);
+}
+
+.pill-text {
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
