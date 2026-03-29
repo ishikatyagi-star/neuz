@@ -1,8 +1,11 @@
 .onboarding-container {
-  min-height: 100vh;
-  padding: var(--space-6) var(--space-4);
   display: flex;
   flex-direction: column;
+  padding: var(--space-6) var(--space-4);
+  padding-bottom: 80px;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .onboarding-header {

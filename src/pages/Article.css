@@ -1,5 +1,7 @@
 .article-container {
-  min-height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 80px;
 }
 

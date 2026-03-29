@@ -1,9 +1,12 @@
 .profile-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: var(--space-6) var(--space-4);
   gap: var(--space-8);
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 80px;
 }
 
 .profile-header {
